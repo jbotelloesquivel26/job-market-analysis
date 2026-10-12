@@ -96,3 +96,28 @@ print(postings_with_skills.head(10))
 
 print("\nMerged postings with skills shape:")
 print(postings_with_skills.shape)
+
+# Create Excel Reference Preview
+preview_columns = [
+    "job_id",
+    "company_name",
+    "title",
+    "experience_level",
+    "work_type",
+    "remote_status",
+    "normalized_salary",
+    "skill_abr",
+    "skill_name",
+]
+
+postings_with_skills[preview_columns].head(100).to_csv(
+    "excel_references/postings_with_skills_preview.csv",
+    index=False
+)
+
+# Validate Merged Postings
+print("\nUnique job IDs after merge:")
+print(postings_with_skills["job_id"].nunique())
+
+print("\nMissing skill names after merge:")
+print(postings_with_skills["skill_name"].isna().sum())
