@@ -95,3 +95,52 @@ bi_analyst_title_counts = (
     .value_counts()
     .reset_index()
 )
+
+# Inspect Reporting Analyst Titles
+reporting_analyst_mask = postings["title"].str.contains(
+    "Reporting Analyst",
+    case=False,
+    na=False
+)
+
+print("\nReporting Analyst mask:")
+print(reporting_analyst_mask.head(10))
+
+reporting_analyst_postings = postings[reporting_analyst_mask]
+
+print("\nReporting Analyst postings shape:")
+print(reporting_analyst_postings.shape)
+
+reporting_analyst_title_counts = (
+    reporting_analyst_postings["title"]
+    .value_counts()
+    .reset_index()
+)
+
+# Create Reporting Analyst Excel Reference
+reporting_analyst_title_counts.to_csv(
+    "excel_references/reporting_analyst_title_counts.csv",
+    index=False
+)
+
+# Combine Core Analyst Titles Filters
+analyst_mask = (
+    data_analyst_mask
+    | business_analyst_mask
+    | bi_analyst_mask
+    | reporting_analyst_mask
+)
+
+analyst_postings = postings[analyst_mask]
+
+print("\nAnalyst postings shape:")
+print(analyst_postings.shape)
+
+print("\nAnalyst postings title counts:")
+print(analyst_postings["title"].value_counts(20))
+
+# Create Analyst Postings Excel Reference
+analyst_postings.to_csv(
+    "excel_references/analyst_postings.csv",
+    index=False
+)
