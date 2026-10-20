@@ -19,3 +19,6 @@ data/processed/*.csv
 
 # Excel reference files
 excel_references/
+
+# VS Code settings
+.vscode/
