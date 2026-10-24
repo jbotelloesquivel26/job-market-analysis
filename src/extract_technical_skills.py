@@ -47,7 +47,7 @@ skill_patterns = {
     "Tableau": r"\btableau\b",
     "Pandas": r"\bpandas\b",
     "NumPy": r"\bnumpy\b",
-    "R": r"\br programming\b|\br language\b|\brstudio\b",
+    "R": r"\br programming\b|\br language\b|\brstudio\b|\busing r\b|\bexperience with r\b|\bknowledge of r\b",
     "SAS": r"\bsas\b",
     "SPSS": r"\bspss\b",
     "Alteryx": r"\balteryx\b",
@@ -57,7 +57,15 @@ skill_patterns = {
     "AWS": r"\baws\b|\bamazon web services\b",
     "Azure": r"\bazure\b",
     "GCP": r"\bgcp\b|\bgoogle cloud\b",
-    "Git": r"\bgit\b|\bgithub\b"
+    "Git": r"\bgit\b|\bgithub\b",
+    "PostgreSQL": r"\bpostgresql\b|\bpostgres\b",
+    "MySQL": r"\bmysql\b",
+    "SQL Server": r"\bsql\s*server\b|\bmssql\b",
+    "Databricks": r"\bdatabricks\b",
+    "Spark": r"\bapache\s+spark\b|\bpyspark\b",
+    "Power Query": r"\bpower\s*query\b",
+    "DAX": r"\bdax\b",
+    "VBA": r"\bvba\b|\bvisual basic for applications\b",
 }
 
 # Create Technical Skills Result List

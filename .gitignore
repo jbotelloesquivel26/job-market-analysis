@@ -21,4 +21,7 @@ data/processed/*.csv
 excel_references/
 
 # VS Code settings
+.vscode/data/processed/*.xlsx
+
 .vscode/
+data/processed/*.xlsx
